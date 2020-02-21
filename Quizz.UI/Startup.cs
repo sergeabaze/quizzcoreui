@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,9 +26,21 @@ namespace Quizz.UI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache();
             services.AddControllersWithViews();
+          
+                
             //services.AddIdentity<ApplicationUser, IdentityRole>();
             services.AddTransient<IEmailSender, EmailSender>();
+           // services.AddMvc();
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = ".Quizz.Session";
+                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.Cookie.HttpOnly = true;
+                    // Make the session cookie essential
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,17 +58,19 @@ namespace Quizz.UI
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
+            //app.UseHttpContextItemsMiddleware();
 
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+    
+             
         }
     }
 }

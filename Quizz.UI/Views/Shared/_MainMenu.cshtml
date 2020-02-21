@@ -1,3 +1,11 @@
+@model Quizz.UI.Models.SessionUserModel
+@{
+   var user =Context.Session.Get<SessionUserModel>("userconnect");
+     if (user == null){
+       user = new Quizz.UI.Models.SessionUserModel{ Email ="", Login = "", ID =""};
+     }
+}
+
 <div class="sidebar">
    <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
@@ -5,7 +13,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Adminstrateur</a>
+          <a href="#" class="d-block"> @user.Email</a>
         </div>
       </div>
 

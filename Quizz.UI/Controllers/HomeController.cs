@@ -20,6 +20,11 @@ namespace Quizz.UI.Controllers
 
         public IActionResult Index()
         {
+
+           // if(HttpContext.Session.Get<SessionUserModel>("userconnect") == null)
+            //  return RedirectToAction(nameof(AccountController.Login), "Account");
+          _logger.LogInformation("Affiche HomeController-->index");
+
             return View();
         }
 

@@ -35,3 +35,16 @@ E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Quizz.UI.pdb
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Quizz.UI.csproj.CopyComplete
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_MainMenu.cshtml.g.cs
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Views\Account\Login.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Configuration.Json.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.FileProviders.Physical.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.FileSystemGlobbing.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Microsoft.Extensions.Primitives.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\System.Runtime.CompilerServices.Unsafe.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\System.Text.Encodings.Web.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\System.Text.Json.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs

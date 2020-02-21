@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Quizz.UI.Models;
 using Quizz.UI.Models.ComptesViewModel;
@@ -14,10 +15,12 @@ namespace Quizz.UI.Controllers
 {
 
 
-  [Authorize]
-  [Route("[controller]/[action]")]
+  //[Authorize]
+  // [Route("[controller]/[action]")]
+  [Route("account")]
   public class AccountController : Controller
   {
+    string SessionKey = "ka";
    // private readonly UserManager<ApplicationUser> _userManager;
     //private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly IEmailSender _emailSender;
@@ -36,9 +39,12 @@ namespace Quizz.UI.Controllers
     [TempData]
     public string ErrorMessage { get; set; }
 
-    [HttpGet]
-    [AllowAnonymous]
-   // public async Task<IActionResult> Login(string returnUrl = null)
+    // [HttpGet]
+    //[AllowAnonymous]
+    // public async Task<IActionResult> Login(string returnUrl = null)
+   // [Route("")]
+    [Route("login")]
+    //[Route("~/")]
     public  IActionResult Login(string returnUrl = null)
     {
       // Clear the existing external cookie to ensure a clean login process
@@ -49,13 +55,23 @@ namespace Quizz.UI.Controllers
       return View();
     }
 
+    [Route("login")]
     [HttpPost]
     [AllowAnonymous]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
     {
       ViewData["ReturnUrl"] = returnUrl;
-      
+      model.Email ="admin@gmail.com";
+      model.RememberMe =true;
+      SessionUserModel user =new SessionUserModel();
+      user.Email = model.Email;
+      user.Email = model.Email;
+      user.Login = "admin.admin";
+      user.ID = "admin";
+      SessionKey = "userconnect";
+      HttpContext.Session.Set<SessionUserModel>(SessionKey,user);
+    
       return RedirectToLocal(returnUrl);
      // if (ModelState.IsValid)
       //{
@@ -87,11 +103,13 @@ namespace Quizz.UI.Controllers
      // return View(model);
     }
 
+    [Route("logout")]
     [HttpPost]
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Logout()
     {
-     // await _signInManager.SignOutAsync();
+      // await _signInManager.SignOutAsync();
+      HttpContext.Session.Remove("userconnect");
       _logger.LogInformation("User logged out.");
       return RedirectToAction(nameof(HomeController.Index), "Home");
     }
