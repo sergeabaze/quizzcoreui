@@ -71,6 +71,7 @@ namespace Quizz.UI.Controllers
       user.ID = "admin";
       SessionKey = "userconnect";
       HttpContext.Session.Set<SessionUserModel>(SessionKey,user);
+      HttpContext.Session.SetString("email",user.Email);
     
       return RedirectToLocal(returnUrl);
      // if (ModelState.IsValid)

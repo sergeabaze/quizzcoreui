@@ -1,20 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Quizz.UI.Models;
-using Quizz.UI.Services;
 
 namespace Quizz.UI
 {
-    public class Startup
+  public class Startup
     {
         public Startup(IConfiguration configuration)
         {
@@ -28,15 +21,13 @@ namespace Quizz.UI
         {
             services.AddDistributedMemoryCache();
             services.AddControllersWithViews();
-          
-                
-            //services.AddIdentity<ApplicationUser, IdentityRole>();
-            services.AddTransient<IEmailSender, EmailSender>();
+            services.Configuration();
+           services.Configure<MySettings>(Configuration.GetSection("MySettings"));
            // services.AddMvc();
             services.AddSession(options =>
             {
                 options.Cookie.Name = ".Quizz.Session";
-                options.IdleTimeout = TimeSpan.FromSeconds(10);
+                options.IdleTimeout = TimeSpan.FromSeconds(500);
                 options.Cookie.HttpOnly = true;
                     // Make the session cookie essential
                 options.Cookie.IsEssential = true;
@@ -65,7 +56,12 @@ namespace Quizz.UI
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
+              endpoints.MapControllerRoute(
+                name: "Administration",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+
+              endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });

@@ -48,3 +48,10 @@ E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\System.Runtime.Comp
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\System.Text.Encodings.Web.dll
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\System.Text.Json.dll
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Societe\Index.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Shared\_LayoutAdministration.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Societe\_Index.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Societe\_Edit.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Societe\Edit.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Societe\Delete.cshtml.g.cs

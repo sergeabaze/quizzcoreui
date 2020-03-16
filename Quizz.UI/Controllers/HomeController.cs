@@ -5,26 +5,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using Quizz.UI.Models;
+using Quizz.UI.Services;
 
 namespace Quizz.UI.Controllers
 {
-    public class HomeController : Controller
+     
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
+       // private readonly IOptions<MySettingsModel> appsetting;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+           ApplicationSettings.WebApiUrl = "";
         }
 
         public IActionResult Index()
         {
-
-           // if(HttpContext.Session.Get<SessionUserModel>("userconnect") == null)
-            //  return RedirectToAction(nameof(AccountController.Login), "Account");
           _logger.LogInformation("Affiche HomeController-->index");
-
+            var session= HttpContext.Session.Get<SessionUserModel>("userconnect");
             return View();
         }
 

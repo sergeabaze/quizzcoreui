@@ -1,0 +1,8 @@
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\bin\Debug\netcoreapp3.0\Quizz.Service.deps.json
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\bin\Debug\netcoreapp3.0\Quizz.Service.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\bin\Debug\netcoreapp3.0\Quizz.Service.pdb
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\obj\Debug\netcoreapp3.0\Quizz.Service.csprojAssemblyReference.cache
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\obj\Debug\netcoreapp3.0\Quizz.Service.AssemblyInfoInputs.cache
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\obj\Debug\netcoreapp3.0\Quizz.Service.AssemblyInfo.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\obj\Debug\netcoreapp3.0\Quizz.Service.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.Service\obj\Debug\netcoreapp3.0\Quizz.Service.pdb

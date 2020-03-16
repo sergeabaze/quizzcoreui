@@ -14,21 +14,14 @@ public class AuthorizedAction : ActionFilterAttribute
   public override void OnActionExecuting(ActionExecutingContext filterContext)
   {
     base.OnActionExecuting(filterContext);
+    
+    Controller controller = filterContext.Controller as Controller;
+
     if (filterContext.HttpContext.Session.GetString("email") == null)
     {
       filterContext.Result = new RedirectToRouteResult(
-          new RouteValueDictionary { { "controller", "Account" }, { "action", "Login" } });
+          new RouteValueDictionary { { "controller", "Home" }, { "action", "Index" } });
       return;
     }
-   /* var menus = JsonConvert.DeserializeObject<List<Menus>>(filterContext.HttpContext.Session.GetString("menus"));
-    var controllerName = filterContext.RouteData.Values["controller"];
-    var actionName = filterContext.RouteData.Values["action"];
-    string url = "/" + controllerName + "/" + actionName;
-    if (!menus.Where(s => s.Url == url).Any())
-    {
-      filterContext.Result = new RedirectToRouteResult(
-          new RouteValueDictionary { { "controller", "Account" }, { "action", "Login" } });
-      return;
-    }*/
   }
 }
