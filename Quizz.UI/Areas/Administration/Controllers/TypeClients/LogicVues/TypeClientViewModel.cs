@@ -17,9 +17,9 @@ namespace Quizz.UI.Areas.Administration.TypeClient.LogicVues
   {
     #region Proprietes
       private Uri BaseEndpoint { get; set; }
-      private const string BASE_API = "http://localhost:60/api/v1/TypeClient/";
+      private  string BASE_API ;
       private const string GET_ALL = "rechercher/{0}/{1}/{2}";
-    private const string GET_ALL_PRAM = "rechercher/{0}/{1}/{2}?libelle={3}";
+     private const string GET_ALL_PRAM = "rechercher/{0}/{1}/{2}?libelle={3}";
       private const string GET_BYID = "{0}";
       private const string POST = "creation";
       private const string PUT = "misejour/{0}";
@@ -38,6 +38,7 @@ namespace Quizz.UI.Areas.Administration.TypeClient.LogicVues
         _requetteBilder = new HttpRequestBuilder();
         _traducteur = traducteur;
         _mySettings = settings.Value;
+         BASE_API = _mySettings.ApiBaseUrl + _mySettings.ApiTypeclientUrl;
        }
 
         public TypeClientViewModel(){
@@ -47,6 +48,7 @@ namespace Quizz.UI.Areas.Administration.TypeClient.LogicVues
                 ApiBaseUrl = "http://localhost:60/",
                 ApiTypeclientUrl = "api/v1/TypeClient/"
                 };
+            BASE_API = _mySettings.ApiBaseUrl + _mySettings.ApiTypeclientUrl;
         }
 
     #endregion
@@ -55,14 +57,13 @@ namespace Quizz.UI.Areas.Administration.TypeClient.LogicVues
       public async Task<MessagePaginationViewModel<List<TypeClientAfficheViewModel>>> ObtenireListAsync(int societeid, int index = 1, int page = 10,string libelle = null)
       {
         string URL =null;
-        string baseApi = _mySettings.ApiBaseUrl + _mySettings.ApiTypeclientUrl;
 
         if(string.IsNullOrEmpty(libelle))
         URL = string.Format(GET_ALL, societeid, index, page);
         else
         URL = string.Format(GET_ALL_PRAM, societeid, index, page,libelle);
 
-        var requestUri =new Uri(baseApi + URL);
+        var requestUri =new Uri(BASE_API + URL);
          MessagePaginationViewModel<List<TypeClientAfficheViewModel>> resultat = null;
 
        var httpResponse =await HttpRequestFactory.Get(requestUri.ToString());
