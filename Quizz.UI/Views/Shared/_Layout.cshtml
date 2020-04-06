@@ -26,9 +26,10 @@
         <link rel="stylesheet" href="~/plugins/summernote/summernote-bs4.css">
         <!-- Google Font: Source Sans Pro -->
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.4.2/b-html5-1.4.2/b-print-1.4.2/sl-1.2.3/datatables.min.css" />
     </head>
     <body class="hold-transition sidebar-mini layout-fixed">
-        @{var user =Context.Session.Get<SessionUserModel>("userconnect");}
+        @{var user =Context.Session.Get<UtilisateurViewModel>("userconnect");}
 
         <div class="wrapper">
              <header>
@@ -109,7 +110,7 @@
 
 </environment>
     
-        <!-- <script src="~/lib/jquery/dist/jquery.min.js"></script>-->
+       
          <!--<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>-->
         <script src="~/js/site.js" asp-append-version="true"></script>
 
@@ -145,7 +146,9 @@
         <!-- AdminLTE dashboard demo (This is only for demo purposes) 
         <script src="~/dist/js/pages/dashboard.js"></script>-->
         <!-- AdminLTE for demo purposes -->
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.16/b-1.4.2/b-html5-1.4.2/b-print-1.4.2/sl-1.2.3/datatables.min.js"></script>
         <script src="~/dist/js/demo.js"></script>
+       
         @RenderSection("Scripts", required: false)
     </body>
 </html>

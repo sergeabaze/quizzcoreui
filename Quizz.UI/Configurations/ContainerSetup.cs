@@ -1,9 +1,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Quizz.UI.Areas.Administration.Societe.LogicVues;
-using Quizz.UI.Areas.Administration.Societe.Traducteur;
+using Quizz.UI.Areas.Administration.LogicVues;
+using Quizz.UI.Areas.Administration.Traducteur;
 using Quizz.UI.Areas.Administration.TypeClient.LogicVues;
 using Quizz.UI.Areas.Administration.TypeClient.Traducteur;
+using Quizz.UI.Communs;
 using Quizz.UI.Services;
 
 namespace Quizz.UI{
@@ -16,9 +17,12 @@ public static class ContainerSetUp
    // AjoutConfigurations(services,configuration);
   }
   private static void ConfigurationLogicVues(IServiceCollection services){
-
+    
+      services.AddTransient<IHttpCustomClientFactory, HttpCustomClientFactory>();
       services.AddTransient<ITypeClientViewModel, TypeClientViewModel>();
       services.AddTransient<ISocieteViewModel, SocieteViewModel>();
+      services.AddTransient<IEmployeViewModel, EmployeViewModel>();
+      services.AddTransient<IUtilisateurService, UtilisateurService>();
       services.AddTransient<IEmailSender, EmailSender>();
   }
 
@@ -26,6 +30,7 @@ public static class ContainerSetUp
   {
     services.AddScoped<ITypeClientTraducteur, TypeClientTraducteur>();
     services.AddScoped<ISocieteTraducteur, SocieteTraducteur>();
+    services.AddScoped<IEmployeTraducteur, EmployeTraducteur>();
   }
 
   private static void AjoutConfigurations(IServiceCollection services, IConfiguration configuration){

@@ -14,7 +14,7 @@ namespace Quizz.ui.Tests.Typeclient
   {
 
     Fixture _fixture;
-    private readonly ITypeClientViewModel _viewModel;
+   // private readonly ITypeClientViewModel _viewModel;
     private readonly Mock<ITypeClientTraducteur> _traducteur;
 
     public TypeClientViewModeltest()

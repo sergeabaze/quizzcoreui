@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="AutoFixture.xUnit2" Version="4.11.0" />
+    <PackageReference Include="FluentAssertions.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="Moq" Version="4.13.1" />
     <PackageReference Include="xunit" Version="2.4.0" />
@@ -17,6 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Quizz.UI\Quizz.UI.csproj" />
+    <ProjectReference Include="..\Quizz.Service\Quizz.Service.csproj" />
+    <ProjectReference Include="..\Quizz.DomainModel\Quizz.DomainModel.csproj" />
   </ItemGroup>
 
 </Project>

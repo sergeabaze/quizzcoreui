@@ -4,14 +4,14 @@
     "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\Quizz.Ui.Integartion.Tests.csproj": {}
   },
   "projects": {
-    "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\Quizz.Ui.Integartion.Tests.csproj": {
+    "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\Quizz.Ui.Integartion.Tests.csproj",
-        "projectName": "Quizz.Ui.Integartion.Tests",
-        "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\Quizz.Ui.Integartion.Tests.csproj",
+        "projectUniqueName": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj",
+        "projectName": "Quizz.Service",
+        "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj",
         "packagesPath": "C:\\Users\\filss\\.nuget\\packages\\",
-        "outputPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\obj\\",
+        "outputPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -42,9 +42,78 @@
       "frameworks": {
         "netcoreapp3.0": {
           "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\Quizz.Ui.Integartion.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\Quizz.Ui.Integartion.Tests.csproj",
+        "projectName": "Quizz.Ui.Integartion.Tests",
+        "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\Quizz.Ui.Integartion.Tests.csproj",
+        "packagesPath": "C:\\Users\\filss\\.nuget\\packages\\",
+        "outputPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Ui.Integartion.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\filss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj": {
+                "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj"
+              },
+              "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.ui.Tests\\Quizz.ui.Tests.csproj": {
+                "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.ui.Tests\\Quizz.ui.Tests.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
             "AutoFixture": {
               "target": "Package",
-              "version": "(, )"
+              "version": "[4.11.0, )"
             },
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -78,6 +147,168 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.ui.Tests\\Quizz.ui.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.ui.Tests\\Quizz.ui.Tests.csproj",
+        "projectName": "Quizz.ui.Tests",
+        "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.ui.Tests\\Quizz.ui.Tests.csproj",
+        "packagesPath": "C:\\Users\\filss\\.nuget\\packages\\",
+        "outputPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.ui.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\filss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj": {
+                "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj"
+              },
+              "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\Quizz.UI.csproj": {
+                "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\Quizz.UI.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "AutoFixture.xUnit2": {
+              "target": "Package",
+              "version": "[4.11.0, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.13.1, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\Quizz.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\Quizz.UI.csproj",
+        "projectName": "Quizz.UI",
+        "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\Quizz.UI.csproj",
+        "packagesPath": "C:\\Users\\filss\\.nuget\\packages\\",
+        "outputPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\filss\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.0": {
+            "projectReferences": {
+              "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj": {
+                "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.1.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
