@@ -1,0 +1,31 @@
+@model EmployeCreationViewModel
+@{
+   
+     Layout = "_LayoutAdministration";
+     ViewData["Title"] = "creation";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-outline card-primary">
+                <div class="card-header">
+                  <div class="card-title">
+                   <h2>Page Creation</h2>
+                </div>
+                </div>
+                
+                <div class="card-tools">
+                    <div class="btn-group">
+                     <a asp-action="Index" class=" btn-info btn-sm" asp-area="Administration"><i class="fas fa-address-card"></i>Liste Employes</a>
+                    </div>
+                 
+                </div>
+                <div class="car-body">
+                  @await Html.PartialAsync("_Creation",Model)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

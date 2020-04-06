@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Quizz.UI.Areas.Administration.Models;
 using Quizz.UI.Services;
 
-namespace Quizz.UI.Areas.Administration.Societe.LogicVues
+namespace Quizz.UI.Areas.Administration.LogicVues
 {
   public interface ISocieteViewModel
   {

@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.Extensions.Configuration;
 using Quizz.UI.Models;
+using Quizz.UI.Models.ComptesViewModel;
 using static System.Net.WebRequestMethods;
 
 namespace Quizz.UI.Controllers
@@ -29,9 +30,9 @@ namespace Quizz.UI.Controllers
        
     }
 
-    public SessionUserModel Usersession {
+    public UtilisateurViewModel SessionUtilisateur {
       get {
-        var session = HttpContext.Session.Get<SessionUserModel>("userconnect");
+        var session = HttpContext.Session.Get<UtilisateurViewModel>("userconnect");
         return session;
       }
     }

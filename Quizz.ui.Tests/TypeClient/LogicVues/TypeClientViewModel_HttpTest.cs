@@ -38,6 +38,7 @@ namespace Quizz.ui.Tests.Typeclient
         int Id = 1;
 
       //act
+      var de = await Task.FromResult(new { id =Id});
        //var response =await _viewModel.ObtenireParIdAsync(Id) ;
 
       //assert
@@ -53,6 +54,7 @@ namespace Quizz.ui.Tests.Typeclient
       //arrange
       _viewModel = new TypeClientViewModel();
       int Id = 1000;
+      var de = await Task.FromResult(new { id = Id });
 
       //act
     // var response = await _viewModel.ObtenireParIdAsync(Id);
@@ -74,6 +76,7 @@ namespace Quizz.ui.Tests.Typeclient
       //arrange
       _viewModel = new TypeClientViewModel();
       int societeid = 1;
+      var de = await Task.FromResult(new { id = societeid });
 
       //act
      // var response = await _viewModel.ObtenireListAsync(societeid);
@@ -95,7 +98,7 @@ namespace Quizz.ui.Tests.Typeclient
       _viewModel = new TypeClientViewModel();
       int societeid = 1;
       string libelle = "societe";
-
+      var asyntask = await Task.FromResult(new { id = societeid, libelle =libelle });
       //act
      // var response = await _viewModel.ObtenireListAsync(societeid,10,1,libelle);
 
@@ -113,7 +116,7 @@ namespace Quizz.ui.Tests.Typeclient
       _viewModel = new TypeClientViewModel();
       int societeid = 1;
       string libelle = "societeddddd";
-
+      var asyntask = await Task.FromResult(new { id = societeid, libelle = libelle });
       //act
      // var response = await _viewModel.ObtenireListAsync(societeid, 10, 1, libelle);
 
@@ -131,6 +134,7 @@ namespace Quizz.ui.Tests.Typeclient
     {
       //arrange
        var typeclient = new TypeClientRequetteViewModel { Id =0, Code ="hack1", Libelle ="hackeur11"  };
+      var asyntask = await Task.FromResult(typeclient);
       //act
 
       _viewModel = new TypeClientViewModel();
@@ -148,6 +152,8 @@ namespace Quizz.ui.Tests.Typeclient
     {
       //arrange
       var typeclient = new TypeClientRequetteViewModel { Id = 0, Code = "demalo", Libelle = "demalo" };
+      var asyntask = await Task.FromResult(typeclient);
+
       //act
 
       _viewModel = new TypeClientViewModel();
@@ -164,6 +170,7 @@ namespace Quizz.ui.Tests.Typeclient
     {
       //arrange
       var typeclient = new TypeClientRequetteViewModel { Id = 4, Code = "zack", Libelle = "zackeurdesii12" };
+      var asyntask = await Task.FromResult(typeclient);
       //act
 
       _viewModel = new TypeClientViewModel();
@@ -181,6 +188,8 @@ namespace Quizz.ui.Tests.Typeclient
     {
       //arrange
       var typeclientid =4;
+      var asyntask = await Task.FromResult(new {id = typeclientid});
+
       //act
 
       _viewModel = new TypeClientViewModel();
@@ -196,6 +205,7 @@ namespace Quizz.ui.Tests.Typeclient
     {
       //arrange
       var typeclientid = 7000;
+      var asyntask = await Task.FromResult(new { id = typeclientid });
       //act
 
       _viewModel = new TypeClientViewModel();

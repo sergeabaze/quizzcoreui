@@ -20,7 +20,7 @@ public class AuthorizedAction : ActionFilterAttribute
     if (filterContext.HttpContext.Session.GetString("email") == null)
     {
       filterContext.Result = new RedirectToRouteResult(
-          new RouteValueDictionary { { "controller", "Home" }, { "action", "Index" } });
+          new RouteValueDictionary {{ "area", "" }, { "controller", "Home" }, { "action", "Index" } });
       return;
     }
   }

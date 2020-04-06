@@ -27,7 +27,7 @@ namespace Quizz.UI.Areas.Administration.TypeClient.LogicVues
       private readonly HttpRequestBuilder _requetteBilder;
     private readonly ITypeClientTraducteur _traducteur;
     private readonly MySettings _mySettings;
-    private readonly string _BaseApi;
+  
 
     #endregion
 

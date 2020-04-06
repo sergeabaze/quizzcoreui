@@ -28,13 +28,20 @@ using Quizz.UI.Areas.Administration.Models;
 #nullable disable
 #nullable restore
 #line 3 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
-using Quizz.UI.Areas.Administration.Societe.Traducteur;
+using Quizz.UI.Areas.Administration.Traducteur;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+using DataTables.AspNetCore.Mvc;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1a51984b8ccf9dfa4e346e17724cd5ba16544423", @"/Areas/Administration/Views/Societe/Delete.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ee75fe36b5f5d38cad8fa7eb944e2196ab349251", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8cd24cd85483ef24434992af2361967e8ce34cbd", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_Societe_Delete : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

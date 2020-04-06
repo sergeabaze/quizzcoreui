@@ -1,4 +1,4 @@
- @if(Context.Session.Get<SessionUserModel>("userconnect") != null){
+ @if(Context.Session.Get<UtilisateurViewModel>("userconnect") != null){
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
  <ul class="navbar-nav ml-auto">
     <li class="nav-item dropdown">

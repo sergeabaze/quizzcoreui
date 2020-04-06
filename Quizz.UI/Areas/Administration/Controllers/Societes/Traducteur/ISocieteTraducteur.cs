@@ -1,4 +1,4 @@
-namespace Quizz.UI.Areas.Administration.Societe.Traducteur
+namespace Quizz.UI.Areas.Administration.Traducteur
 {
   public interface ISocieteTraducteur
   {

@@ -1,0 +1,48 @@
+@model IEnumerable<EmployeAfficheViewModel>
+@{
+   
+     Layout = "_LayoutAdministration";
+     ViewData["Title"] = "Liste employes";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="card card-outline card-primary">
+                <div class="card-header">
+                  <div class="card-title">
+                   <h2>Liste des Employes</h2>
+                </div>
+                </div>
+                
+                <div class="card-tools">
+                    <div class="btn-group">
+                     <a asp-action="Creation" class=" btn-info " asp-area="Administration">
+                          <i class="fas fa-edit"></i>
+                         Nouveau</a>
+                     <a asp-action="Index" class="btn-primary " asp-area="Administration">
+                         <i class="fas fa-async"></i>
+                         Refresh</a>
+                         <a asp-action="Index" class="btn-default " asp-area="Administration">
+                         <i class="fas fa-arrow-alt-circle-down"></i>
+                         Import</a>
+                    </div>
+                   
+                </div>
+                <div class="card-body">
+  
+                    @await Html.PartialAsync("_Index",Model)
+                </div>
+
+                 </div>
+
+                 </div>
+                                </div>
+                            </div>
+
+
+    @section scriptes{
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="@Url.Content("/js/employes.js")"></script>
+    }
+
+ 
