@@ -34,14 +34,21 @@ using Quizz.UI.Areas.Administration.Traducteur;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+#line 4 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+using Quizz.DomainModel.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
 using DataTables.AspNetCore.Mvc;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b7857db5893e5c5d21c15a27557ace545532b7a4", @"/Areas/Administration/Views/Societe/_Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8cd24cd85483ef24434992af2361967e8ce34cbd", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"85d838a58c0207e0a09098b7d33447e511709208", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_Societe__Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<SocieteListeViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Index", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -99,7 +106,7 @@ using DataTables.AspNetCore.Mvc;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a45788", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a45984", async() => {
 #nullable restore
 #line 17 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\Societe\_Index.cshtml"
                                                                                  Write(Html.DisplayNameFor(model => model.Designation));
@@ -136,7 +143,7 @@ using DataTables.AspNetCore.Mvc;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n      </td>\r\n      <td>\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a48297", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a48493", async() => {
                 WriteLiteral("Edit");
             }
             );
@@ -167,7 +174,7 @@ using DataTables.AspNetCore.Mvc;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a410452", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a410648", async() => {
                 WriteLiteral("Details");
             }
             );
@@ -198,7 +205,7 @@ using DataTables.AspNetCore.Mvc;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral(" |\r\n        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a412614", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b7857db5893e5c5d21c15a27557ace545532b7a412810", async() => {
                 WriteLiteral("Delete");
             }
             );

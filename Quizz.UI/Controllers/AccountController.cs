@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Quizz.UI.Models;
 using Quizz.UI.Models.ComptesViewModel;
 using Quizz.UI.Services;
+using Microsoft.Extensions.Options;
 
 namespace Quizz.UI.Controllers
 {
@@ -24,15 +25,18 @@ namespace Quizz.UI.Controllers
     private readonly IUtilisateurService _service;
     private readonly IEmailSender _emailSender;
     private readonly ILogger _logger;
+    private readonly MySettings _mySettings;
 
     public AccountController(
         IEmailSender emailSender,
         ILogger<AccountController> logger,
-        IUtilisateurService service)
+        IUtilisateurService service,
+        IOptions<MySettings> settings)
     {
       _service = service;
       _emailSender = emailSender;
       _logger = logger;
+      _mySettings = settings.Value;
     }
 
     [TempData]

@@ -34,14 +34,21 @@ using Quizz.UI.Areas.Administration.Traducteur;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+#line 4 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+using Quizz.DomainModel.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
 using DataTables.AspNetCore.Mvc;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f440a25d9220223a5b403634c039609db13657ab", @"/Areas/Administration/Views/Shared/_LayoutAdministration.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8cd24cd85483ef24434992af2361967e8ce34cbd", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"85d838a58c0207e0a09098b7d33447e511709208", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_Shared__LayoutAdministration : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

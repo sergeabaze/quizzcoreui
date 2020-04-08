@@ -2523,6 +2523,16 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "Quizz.DomainModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/Quizz.DomainModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Quizz.DomainModel.dll": {}
+        }
+      },
       "Quizz.Service/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.0",
@@ -7702,6 +7712,11 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "Quizz.DomainModel/1.0.0": {
+      "type": "project",
+      "path": "../Quizz.DomainModel/Quizz.DomainModel.csproj",
+      "msbuildProject": "../Quizz.DomainModel/Quizz.DomainModel.csproj"
+    },
     "Quizz.Service/1.0.0": {
       "type": "project",
       "path": "../Quizz.Service/Quizz.Service.csproj",
@@ -7713,6 +7728,7 @@
       "DataTables.AspNetCore.Mvc >= 1.4.2",
       "Microsoft.Extensions.Configuration.Json >= 3.1.1",
       "Newtonsoft.Json >= 12.0.3",
+      "Quizz.DomainModel >= 1.0.0",
       "Quizz.Service >= 1.0.0",
       "Serilog.Extensions.Logging.File >= 2.0.0"
     ]
@@ -7748,6 +7764,9 @@
       "frameworks": {
         "netcoreapp3.0": {
           "projectReferences": {
+            "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.DomainModel\\Quizz.DomainModel.csproj": {
+              "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.DomainModel\\Quizz.DomainModel.csproj"
+            },
             "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj": {
               "projectPath": "E:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.Service\\Quizz.Service.csproj"
             }

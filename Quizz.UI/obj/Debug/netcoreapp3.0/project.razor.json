@@ -14464,6 +14464,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\Areas\\Administration\\Views\\Employe\\_ProfileListe.cshtml",
+      "TargetPath": "Areas\\Administration\\Views\\Employe\\_ProfileListe.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\absquizz\\UI\\QuizzCoreMvc\\Quizz.UI\\Areas\\Administration\\Views\\Employe\\_Edit.cshtml",
       "TargetPath": "Areas\\Administration\\Views\\Employe\\_Edit.cshtml",
       "FileKind": "mvc"

@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel.DataAnnotations;
+using Quizz.DomainModel.Enums;
 
 namespace Quizz.UI.Areas.Administration.Models
 {
@@ -8,7 +9,8 @@ namespace Quizz.UI.Areas.Administration.Models
     public int Id { get; set; }
     public int SocieteId { get; set; }
     public int TypeEmployeId { get; set; }
-
+    [EnumDataType(typeof(TypeEmployeEnum))]
+    public TypeEmployeEnum TypeEmploye { get; set; }
     [Required(ErrorMessage = "Le Nom est un champ requis")]
     public string Nom { get; set; }
     public string Prenom { get; set; }
@@ -25,7 +27,6 @@ namespace Quizz.UI.Areas.Administration.Models
     public DateTime DateCreation { get; set; }
     public string CreePar { get; set; }
     public DateTime? DateMiseJour { get; set; }
-    
   }
 
 }

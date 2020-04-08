@@ -16,7 +16,6 @@ namespace Quizz.UI.Areas.Administration.Models
     public string Telephone2 { get; set; }
     public bool EstCompteActif { get; set; }
     public bool EstCompteSupprimer { get; set; }
-
     public DateTime? DatePremierConnection { get; set; }
     public DateTime? DateDerniereConnection { get; set; }
     public DateTime DateCreation { get; set; }

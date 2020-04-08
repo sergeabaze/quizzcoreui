@@ -27,6 +27,7 @@
           "DataTables.AspNetCore.Mvc": "1.4.2",
           "Microsoft.Extensions.Configuration.Json": "3.1.1",
           "Newtonsoft.Json": "12.0.3",
+          "Quizz.DomainModel": "1.0.0",
           "Quizz.Service": "1.0.0",
           "Serilog.Extensions.Logging.File": "2.0.0",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.0.0.0",
@@ -1867,6 +1868,14 @@
           "System.Xml.ReaderWriter": "4.3.0",
           "System.Xml.XDocument": "4.3.0",
           "System.Xml.XPath": "4.3.0"
+        }
+      },
+      "Quizz.DomainModel/1.0.0": {
+        "runtime": {
+          "Quizz.DomainModel.dll": {}
+        },
+        "compile": {
+          "Quizz.DomainModel.dll": {}
         }
       },
       "Quizz.Service/1.0.0": {
@@ -4668,6 +4677,11 @@
       "sha512": "sha512-jw9oHHEIVW53mHY9PgrQa98Xo2IZ0ZjrpdOTmtvk+Rvg4tq7dydmxdNqUvJ5YwjDqhn75mBXWttWjiKhWP53LQ==",
       "path": "system.xml.xpath.xdocument/4.3.0",
       "hashPath": "system.xml.xpath.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Quizz.DomainModel/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Quizz.Service/1.0.0": {
       "type": "project",

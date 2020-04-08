@@ -6,19 +6,27 @@ $(document).ready(function () {
     "filter": true, 
     "orderMulti": false,  
     "sScrollY": "200px",
-    "bPaginate": false,
+    "bPaginate": true,
     "aLengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
     "ajax": {
       "url": "/Administration/Employe/_chargement",
       "type": "GET",
-      "datatype": "json"
+      "datatype": "json",
+      error: function (xhr, error, thrown) {
+        alert('You are not logged in');
+      }
     },
     "columnDefs":
       [{
         "targets": [0],
         "visible": false,
         "searchable": false
-      }],  
+      }],
+    "pageLength": 10, // default record count per page
+
+    "order": [
+      [1, "asc"]
+    ],
     "columns": [
       { "data": "id", "name": "id", "autoWidth": true },
       { "data": "nom", "name": "Nom Employe", "autoWidth": true },
@@ -34,6 +42,10 @@ $(document).ready(function () {
         "render": function (data, type, full, meta) { return '<a class="btn btn-danger" href="/Administration/Employe/Delete/' + full.id + '">Supprimer</a>'; }
       },  
     ]
+  }).on('error.dt', function (e, settings, techNote, message) {
+    alert('You are not logged in' + message);
+    console.log('Error: Calendar DataTables: ' + message); // for test purpose
+    return true;
   });
 });
 

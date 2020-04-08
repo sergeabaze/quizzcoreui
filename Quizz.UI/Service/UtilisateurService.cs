@@ -20,7 +20,7 @@ namespace Quizz.UI.Services
     private string BASE_API;
    
     private const string POST = "login";
-    private const string PUT = "misejour/{0}";
+    private const string PUT_CHANGER_MOTPASSE = "changermotpasse";
     private readonly HttpRequestBuilder _requetteBilder;
    // private readonly IEmployeTraducteur _traducteur;
     private readonly MySettings _mySettings;
@@ -78,34 +78,46 @@ namespace Quizz.UI.Services
         resultat = new MessageviewModel<UtilisateurViewModel>();
         resultat.EstErreur= true;
         resultat.Message = requestUri.AbsoluteUri ;
-        //((int)httpResponse.StatusCode).ToString()
-        //if (HttpStatusCode.NotFound == httpResponse.StatusCode)
-        //{
-        /* var resultErreur = JsonConvert.DeserializeObject<SingleResponse<EmployeLoginDto>>(response);
-           resultat = new MessageviewModel<UtilisateurViewModel>
-           {
-             Model = null,
-             EstErreur = true,
-             Messages = new List<MessageErreurs>
-             {
-                 new MessageErreurs
-                 {
-                   Code = ((int)httpResponse.StatusCode).ToString(),
-                   Libelle = resultErreur.ErrorMessage
-                   }
-               },
-             Message = "Connection reussie"
-
-       };*/
-
-        /* resultat = GestionStatuthttpmessage.ObtenireMessage<TypeClientRequetteViewModel>(
-           httpResponse.StatusCode,
-           resultErreur.ErrorMessage
-           );*/
-        //}
+       
 
       }
       
+      return resultat;
+    }
+
+    public async Task<MessageviewModel<UtilisateurViewmodelRequette>> EmployeChangementMotPasse(ChangementMotPasseViewModel viewModel)
+    {
+      var requestUri = new Uri(BASE_API + PUT_CHANGER_MOTPASSE);
+      MessageviewModel<UtilisateurViewmodelRequette> resultat = null;
+      var httpResponse = await HttpRequestFactory.Post(requestUri.AbsoluteUri, viewModel);
+      var readTask = httpResponse.Content.ReadAsStringAsync();
+
+      readTask.Wait();
+      var response = readTask.Result;
+      if (httpResponse.IsSuccessStatusCode)
+      {
+        //resultat = new MessageviewModel<UtilisateurViewmodelRequette>();
+
+        var result = JsonConvert.DeserializeObject<SingleResponse<UtilisateurDto>>(response);
+        resultat = new MessageviewModel<UtilisateurViewmodelRequette>
+        {
+          
+          EstErreur = false,
+          Message = "Connection reussie"
+
+        };
+
+      }
+      else
+      {
+        var resultErreur = JsonConvert.DeserializeObject<SingleResponse<UtilisateurDto>>(response);
+        resultat = new MessageviewModel<UtilisateurViewmodelRequette>();
+        resultat.EstErreur = true;
+        resultat.Message = requestUri.AbsoluteUri;
+
+
+      }
+
       return resultat;
     }
 
@@ -170,6 +182,7 @@ namespace Quizz.UI.Services
 
     }
 
+   
   }
 
     

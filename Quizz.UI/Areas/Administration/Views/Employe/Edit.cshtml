@@ -16,8 +16,8 @@
                 
                 <div class="card-tools">
                     <div class="btn-group">
-                       <a asp-action="Index" class=" btn-info btn-sm" asp-area="Administration"><i class="fas fa-address-card"></i>Liste Employes</a>
-                            <a asp-action="Index" class=" btn-danger btn-sm" asp-area="Administration"><i class="fas fa-adress-card"></i>Supprimer</a>
+                       <a asp-action="Index" class=" btn-info btn-lg" asp-area="Administration"><i class="fas fa-address-card"></i>Liste Employes</a>
+                       <a asp-action="Index" class=" btn-danger btn-lg" asp-area="Administration"><i class="fas fa-adress-card"></i>Supprimer</a>
                     </div>
                 </div>
                 <div class="car-body">
@@ -31,17 +31,10 @@
                         <div class="col-7 col-sm-9">
                             <div class="tab-content" id="vert-tabs-tabContent">
                                 <div class="tab-pane text-left fade show active" id="vert-tabs-home" role="tabpanel" aria-labelledby="vert-tabs-home-tab">
-                                    <div class="card card-purple">
-                                        <div class="card-header">
-                                            employe
-                                        </div>
-                                        <div class="card-body">
-                                              @await Html.PartialAsync("_Edit",Model)
-                                        </div>
-                                    </div>
+                                 @await Html.PartialAsync("_Edit",Model)
                                 </div>
                                 <div class="tab-pane fade" id="vert-tabs-profile" role="tabpanel" aria-labelledby="vert-tabs-profile-tab">
-                                    <h3> gestion des profiles</h3>
+                                     @await Html.PartialAsync("_ProfileListe",Model)
                                 </div>
                             </div>
                         </div>

@@ -34,14 +34,21 @@ using Quizz.UI.Areas.Administration.Traducteur;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+#line 4 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+using Quizz.DomainModel.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
 using DataTables.AspNetCore.Mvc;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d855256d640a7233b7e916546912928b15593fd4", @"/Areas/Administration/Views/Employe/_Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8cd24cd85483ef24434992af2361967e8ce34cbd", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"85d838a58c0207e0a09098b7d33447e511709208", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_Employe__Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<EmployeAfficheViewModel>>
     {
         #pragma warning disable 1998

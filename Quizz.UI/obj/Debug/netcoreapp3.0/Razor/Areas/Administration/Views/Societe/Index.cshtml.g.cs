@@ -34,14 +34,21 @@ using Quizz.UI.Areas.Administration.Traducteur;
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+#line 4 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
+using Quizz.DomainModel.Enums;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 6 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Areas\Administration\Views\_ViewImports.cshtml"
 using DataTables.AspNetCore.Mvc;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"bd3bc6293ae84d984d5d16f5956c31778f736bd4", @"/Areas/Administration/Views/Societe/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8cd24cd85483ef24434992af2361967e8ce34cbd", @"/Areas/Administration/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"85d838a58c0207e0a09098b7d33447e511709208", @"/Areas/Administration/Views/_ViewImports.cshtml")]
     public class Areas_Administration_Views_Societe_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<IEnumerable<SocieteListeViewModel>>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-action", "Create", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -85,7 +92,7 @@ using DataTables.AspNetCore.Mvc;
 #line hidden
 #nullable disable
             WriteLiteral("\r\n<h2>Liste societe</h2>\r\n<p>\r\n    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd3bc6293ae84d984d5d16f5956c31778f736bd45154", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd3bc6293ae84d984d5d16f5956c31778f736bd45350", async() => {
                 WriteLiteral("Create New");
             }
             );
@@ -101,7 +108,7 @@ using DataTables.AspNetCore.Mvc;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n</p>\r\n\r\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd3bc6293ae84d984d5d16f5956c31778f736bd46325", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd3bc6293ae84d984d5d16f5956c31778f736bd46521", async() => {
                 WriteLiteral("\r\n    <div class=\"form-actions no-color\">\r\n        <p>\r\n            Find by name: <input type=\"text\" name=\"SearchString\"");
                 BeginWriteAttribute("value", " value=\"", 380, "\"", 414, 1);
 #nullable restore
@@ -113,7 +120,7 @@ WriteAttributeValue("", 388, ViewData["currentFilter"], 388, 26, false);
 #nullable disable
                 EndWriteAttribute();
                 WriteLiteral(" />\r\n            <input type=\"submit\" value=\"Search\" class=\"btn btn-default\" /> |\r\n            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd3bc6293ae84d984d5d16f5956c31778f736bd47208", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd3bc6293ae84d984d5d16f5956c31778f736bd47404", async() => {
                     WriteLiteral("Back to Full List");
                 }
                 );

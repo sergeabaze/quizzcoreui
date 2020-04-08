@@ -8,12 +8,15 @@ using Quizz.UI.Areas.Administration.Models;
 using Quizz.UI.Areas.Administration.LogicVues;
 using Quizz.UI.Areas.Administration.Traducteur;
 using Quizz.UI.Controllers;
-using Microsoft.AspNetCore.Routing;
+using Quizz.DomainModel.Enums;
+using Quizz.UI.Communs.Enum;
+using Quizz.DomainModel.Message;
+using System.Net;
 
 namespace Quizz.UI.Areas.Administration.controllers.Employe
 {
   [Area("Administration")]
-  [AuthorizedAction]
+ // [AuthorizedAction]
   public class EmployeController : BaseController
   {
     #region Proprietes
@@ -39,78 +42,48 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
     {
       try
       {
-        _logger.LogInformation("Employes--> Index");
-       /* var societeid = SessionUtilisateur.SocieteId;
-        var pageSize = 1;
-        var pageCount = 10;
-        var model = await _service.ObtenireListAsync(societeid,pageSize,pageCount);
-        _logger.LogInformation("Employes--> Index total lignes : " + model.ItemCount );*/
-
-        return View();
+        _logger.LogInformation(string.Format(MessageLog.INDEX_MESSAGE, "Index"));
+        
       }
-      catch (System.Exception)
+      catch (Exception ex)
       {
-          
-          throw;
+
+         ModelState.AddModelError("",string.Format(MessageLog.INDEX_MESSAGE_ERREUR,"Cchargement"));
+        _logger.LogWarning(string.Format("Erreur chargement {0}", ex.Message));
       }
-     
-      //return View(await students.AsNoTracking().ToListAsync());
+      return View(ViewNames.Index);
     }
 
-    public async Task<IActionResult> _chargement(){
+    public async Task<JsonResult> _chargement(){
       try
       {
-        _logger.LogInformation("Employes--> Index");
+        _logger.LogInformation(string.Format(MessageLog.INDEX_MESSAGE, "Index"));
       //  var draw = HttpContext.Request.Form["draw"].FirstOrDefault();
-
-        // Skip number of Rows count  
-       // var start = Request.Form["start"].FirstOrDefault();
-
-        // Paging Length 10,20  
-       // var length = Request.Form["length"].FirstOrDefault();
-
-        // Sort Column Name  
-       // var sortColumn = Request.Form["columns[" + Request.Form["order[0][column]"].FirstOrDefault() + "][name]"].FirstOrDefault();
-
-        // Sort Column Direction (asc, desc)  
-       // var sortColumnDirection = Request.Form["order[0][dir]"].FirstOrDefault();
-
-        // Search Value from (Search box)  
-       // var searchValue = Request.Form["search[value]"].FirstOrDefault();
-        //int _pageSize = length != null ? Convert.ToInt32(length) : 0;
-       // int _skip = start != null ? Convert.ToInt32(start) : 0;
-        //int recordsTotal = 0;
-       // if (!(string.IsNullOrEmpty(sortColumn) && string.IsNullOrEmpty(sortColumnDirection)))
-       // {
-         // customerData = customerData.OrderBy(sortColumn + " " + sortColumnDirection);
-      //  }
-        //Search  
-       // if (!string.IsNullOrEmpty(searchValue))
-       // {
-         // customerData = customerData.Where(m => m.Name == searchValue);
-       // }
-
 
         var societeid = SessionUtilisateur.SocieteId;
         var pageSize = 1;
         var pageCount = 10;
         var model = await  _service.ObtenireListAsync(societeid, pageSize, pageCount);
-       // _logger.LogInformation("Employes--> Index total lignes : " + model.ItemCount);
+        
+       _logger.LogInformation("Employes--> Index total lignes : " + model.ItemCount);
 
         return Json(new {  recordsFiltered = model.PageCount, recordsTotal = model.PageSize, data = model.Model });
       }
-      catch (System.Exception)
+      catch (Exception ex)
       {
-
-        throw;
+        _logger.LogWarning(string.Format("Erreur chargement {0}", ex.Message));
+         return Json(new { recordsFiltered = 0, recordsTotal = 0, data = 0 });
       }
 
     }
+
     public async Task<IActionResult> Creation(){
       _logger.LogInformation("SocieteController-->Creation Get");
       EmployeCreationViewModel model = new EmployeCreationViewModel();
+      model.EstCompteActif = true;
+      model.EstCompteSupprimer = false;
       await Task.FromResult(model);
-      return View("Creation",model);
+      return View(ViewNames.Creation, model);
     }
 
     [HttpPost]
@@ -119,23 +92,26 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
     {
       try
       {
-        _logger.LogInformation("SocieteController-->Creation  effective");
-        //if(ModelState.IsValid){
-           await Task.FromResult(model);
-        _logger.LogInformation("SocieteController-->Creation  redirection");
+        _logger.LogInformation("SocieteController-->Creation  Post");
+        if(ModelState.IsValid){
+          model.SocieteId = SessionUtilisateur.SocieteId;
+          model.TypeEmployeId =(int)model.TypeEmploye;
+          model.CreePar = SessionUtilisateur.Nom;
+          var result = await _service.CreationAsync(model);
+          if(result.EstErreur)
+            throw new Exception(string.Join(";",result.Messages.Select(m => m.Libelle)));
+         
+          _logger.LogInformation("SocieteController-->Creation  Creation avec reussite. redirection");
           return RedirectToAction(nameof(Index));
-       // }
+        }
 
       }
       catch (Exception ex)
       {
-
-        ModelState.AddModelError("", "Creation impossible. " +
-          "merci dessayer de nouveau, et si le probleme persiste " +
-          "contactez l'administrateur.");
+        ModelState.AddModelError("", string.Format(MessageLog.INDEX_MESSAGE_ERREUR, "Creation"));
         _logger.LogWarning( string.Format("Erreur lors de la creation {0}",ex.Message));
       }
-      return View(model);
+      return View(ViewNames.Creation , model);
     }
 
 
@@ -150,20 +126,16 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
         {
           throw new Exception(string.Join(";", requette.Messages.Select(m=>m.Libelle)));
         }
-        
-
         model = _traducteur.TraduitVersViewModel(requette.Model);
-        //return View("Edit", model);
+        model.TypeEmploye = (TypeEmployeEnum)model.TypeEmployeId;
       }
       catch (Exception ex)
       {
         model = new EmployeEditionViewModel();
-        ModelState.AddModelError("", "Erreur lors du chargement " + ex.Message);
+        ModelState.AddModelError("", string.Format(MessageLog.INDEX_MESSAGE_ERREUR, "Chargement Edit"));
         _logger.LogWarning(string.Format("Erreur lors du chargement {0}", ex.Message));
       }
-        
-        
-      return View(model);
+      return View(ViewNames.Edit , model);
     }
 
     [HttpPost]
@@ -172,21 +144,33 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
     {
       try
       {
-        _logger.LogInformation("SocieteController-->Edit Post");
-        await Task.FromResult(model);
-        //if(ModelState.IsValid){
-        return RedirectToAction(nameof(Index));
+        _logger.LogInformation("SocieteController-->Edit debut misejour");
+        
+
+        if (ModelState.IsValid)
+        {
           
+          if((int)model.TypeEmploye != model.TypeEmployeId)
+            model.TypeEmployeId = (int)model.TypeEmploye;
+
+          model.MiseJourPar = SessionUtilisateur.Nom; 
+
+          var result = await _service.ModificationAsync(model);
+          if(result.EstErreur)
+            throw new Exception(string.Join(";", result.Messages.Select(m => m.Libelle)));
+
+          _logger.LogInformation("SocieteController-->Edit , Misejour Avec Success , Redirection Index");
+
+          return RedirectToAction(nameof(Index));
+        }
+
       }
       catch (Exception ex)
       {
-        ModelState.AddModelError("", "Modification impossible. " +
-          "merci dessayer de nouveau, et si le probleme persiste " +
-          "contactez l'administrateur.");
-
+        ModelState.AddModelError("", string.Format(MessageLog.INDEX_MESSAGE_ERREUR, "Modification"));
         _logger.LogWarning(string.Format("Erreur lors de la misejour {0}", ex.Message));
       }
-      return View(model);
+      return View(ViewNames.Edit, model);
     }
 
     public async Task<IActionResult> Delete(int id, bool? saveChangesError = false)
@@ -194,12 +178,12 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
       EmployeEditionViewModel model = null;
       try
       {
+        _logger.LogInformation("SocieteController-->Delete chargement vue suppression");
+
         var requette = await _service.ObtenireParIdAsync(id);
-       // await Task.FromResult(1);
         if (requette.EstErreur)
-        {
           throw new Exception(string.Join(";", requette.Messages.Select(m => m.Libelle)));
-        }
+        
         model = _traducteur.TraduitVersViewModel(requette.Model);
 
         if (saveChangesError.GetValueOrDefault())
@@ -207,7 +191,7 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
           throw new Exception("Erreur de suppression");
         }
 
-        
+       
       }
       catch (Exception ex)
       {
@@ -217,7 +201,7 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
           "see your system administrator." + ex.Message;
         model = new EmployeEditionViewModel();
       }
-      return View("Delete", model);
+      return View(ViewNames.Delete , model);
     }
 
     [HttpPost, ActionName("Delete")]
@@ -226,13 +210,19 @@ namespace Quizz.UI.Areas.Administration.controllers.Employe
     {
       try
       {
-        var requette = await _service.ObtenireParIdAsync(id);
+        _logger.LogInformation("SocieteController-->Delete debut Suppression");
 
+        var requette = await _service.ObtenireParIdAsync(id);
+        var result = await _service.SuppressionAsync(id);
+        if (result.EstErreur)
+          throw new Exception(string.Join(";", result.Messages.Select(m => m.Libelle)));
+
+        _logger.LogInformation("SocieteController-->Delete fin  Suppression avec success, redirection");
         return RedirectToAction(nameof(Index));
       }
       catch (Exception ex)
       {
-        _logger.LogWarning(string.Format("Erreur lors de la misejour {0}", ex.Message));
+        _logger.LogWarning(string.Format("SocieteController-->Delete  ,Erreur lors de la Suppression {0}", ex.Message));
 
         return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
       }

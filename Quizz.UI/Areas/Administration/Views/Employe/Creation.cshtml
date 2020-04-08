@@ -17,12 +17,13 @@
                 
                 <div class="card-tools">
                     <div class="btn-group">
-                     <a asp-action="Index" class=" btn-info btn-sm" asp-area="Administration"><i class="fas fa-address-card"></i>Liste Employes</a>
+                     <a asp-action="Index" class=" btn-info btn-lg" asp-area="Administration"><i class="fas fa-address-card"></i>Liste Employes</a>
                     </div>
                  
                 </div>
+
                 <div class="car-body">
-                  @await Html.PartialAsync("_Creation",Model)
+                     @await Html.PartialAsync("_Creation",Model)
                 </div>
             </div>
         </div>

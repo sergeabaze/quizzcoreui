@@ -1,5 +1,6 @@
+
 using System.ComponentModel.DataAnnotations;
-using Quizz.Service.Enums;
+using Quizz.DomainModel.Enums;
 
 namespace Quizz.UI.Areas.Administration.Models
 {
@@ -12,8 +13,10 @@ namespace Quizz.UI.Areas.Administration.Models
     [Required(ErrorMessage = "Le Nom est un champ requis")]
     public string Nom { get; set; }
     public string Prenom { get; set; }
+    [Required(ErrorMessage = "Le Matricule est un champ requis")]
     public string Matricule { get; set; }
     public string MotPasse { get; set; }
+
     [Required(ErrorMessage = "Le Email est un champ requis")]
     public string Email { get; set; }
     [Required(ErrorMessage = "Le Téléphone1 est un champ requis")]
@@ -22,8 +25,10 @@ namespace Quizz.UI.Areas.Administration.Models
     public bool EstCompteActif { get; set; }
     public bool EstCompteSupprimer { get; set; }
     public string CreePar { get; set; }
+    [Required(ErrorMessage = "Le Type  est un champ requis")]
+    
     [EnumDataType(typeof(TypeEmployeEnum))]
-    public TypeEmployeEnum TypeEmployes { get; set; }
+    public TypeEmployeEnum TypeEmploye { get; set; }
   }
 
 }

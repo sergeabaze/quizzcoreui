@@ -7,6 +7,7 @@ namespace Quizz.UI.Services
   public interface IUtilisateurService
   {
    Task<MessageviewModel<UtilisateurViewModel>> EmployeLogin(LoginViewModel viewModel);
+    Task<MessageviewModel<UtilisateurViewmodelRequette>> EmployeChangementMotPasse(ChangementMotPasseViewModel viewModel);
 
   }
 

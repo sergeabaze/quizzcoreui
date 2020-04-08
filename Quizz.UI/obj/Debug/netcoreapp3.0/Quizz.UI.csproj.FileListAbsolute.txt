@@ -84,3 +84,6 @@ E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Adminis
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Employe\Edit.cshtml.g.cs
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Employe\_Creation.cshtml.g.cs
 E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Employe\_Edit.cshtml.g.cs
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Quizz.DomainModel.dll
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\bin\Debug\netcoreapp3.0\Quizz.DomainModel.pdb
+E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\obj\Debug\netcoreapp3.0\Razor\Areas\Administration\Views\Employe\_ProfileListe.cshtml.g.cs
