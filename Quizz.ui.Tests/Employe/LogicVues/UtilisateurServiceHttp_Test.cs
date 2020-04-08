@@ -13,7 +13,7 @@ namespace Quizz.ui.Tests.Employe
 {
   public class UtilisateurServiceHttp_Test
   {
-    Fixture _fixture;
+    //Fixture _fixture;
     private readonly IUtilisateurService _service;
 
     public UtilisateurServiceHttp_Test()

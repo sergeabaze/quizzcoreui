@@ -3,7 +3,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Quizz.UI.Areas.Administration.Models;
 using Quizz.UI.Areas.Administration.LogicVues;
 using Quizz.UI.Areas.Administration.Traducteur;

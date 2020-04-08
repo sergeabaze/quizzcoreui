@@ -12,7 +12,7 @@ namespace Quizz.ui.Tests.Employe
 {
   public class EmployeViewModelHttp_Test
   {
-    Fixture _fixture;
+   // Fixture _fixture;
     private IEmployeViewModel _viewModel;
 
     public EmployeViewModelHttp_Test()
@@ -117,7 +117,6 @@ namespace Quizz.ui.Tests.Employe
         Nom = "lambda",
         Prenom = "teste",
         Matricule = "de45201g",
-        MotPasse = "desissgg",
         Email = "teste@yahoo.fr",
         Telephone1 = "22245212",
         Telephone2 = "333333333",

@@ -69,6 +69,10 @@ namespace Quizz.UI.Areas.Administration.LogicVues
       MessagePaginationViewModel<List<EmployeAfficheViewModel>> resultat = null;
 
       var httpResponse = await _htpclient.Get(requestUri.AbsoluteUri);
+    //  httpResponse.EnsureSuccessStatusCode();
+     // var content = await httpResponse.Content.ReadAsStringAsync();
+     // var resultatTeste = JsonConvert.DeserializeObject<PagedResponse<EmployeListeDto>>(content);
+
       var readTask = httpResponse.Content.ReadAsStringAsync();
 
       readTask.Wait();

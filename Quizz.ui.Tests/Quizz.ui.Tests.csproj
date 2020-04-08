@@ -18,8 +18,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Quizz.UI\Quizz.UI.csproj" />
-    <ProjectReference Include="..\Quizz.Service\Quizz.Service.csproj" />
     <ProjectReference Include="..\Quizz.DomainModel\Quizz.DomainModel.csproj" />
+    <ProjectReference Include="..\Quizz.Service\Quizz.Service.csproj" />
   </ItemGroup>
 
 </Project>
