@@ -5,8 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Quizz.UI.Areas.Administration.Models;
-using Quizz.UI.Areas.Administration.Societe.LogicVues;
-using Quizz.UI.Areas.Administration.Societe.Traducteur;
+using Quizz.UI.Areas.Administration.LogicVues;
+using Quizz.UI.Areas.Administration.Traducteur;
 using Quizz.UI.Controllers;
 
 namespace Quizz.UI.Areas.Administration.controllers.Societe
@@ -39,13 +39,14 @@ namespace Quizz.UI.Areas.Administration.controllers.Societe
     #endregion
 
     #region Actions du controlleur
+    /*
     public async Task<IActionResult> Index(string sortOrder, string searchString)
     {
       ViewData["DesignationSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
 
       _logger.LogInformation("SocieteController-->index");
       _logger.LogInformation("SocieteController-" + _mySettings.ApiBaseUrl);
-         var model =await _service.ObtenireListAsync();
+         var model =await _service.ObtenireListAsync(1);
 
       if (!String.IsNullOrEmpty(searchString))
       {
@@ -97,6 +98,7 @@ namespace Quizz.UI.Areas.Administration.controllers.Societe
           ModelState.AddModelError("", "Unable to save changes. " +
              "Try again, and if the problem persists " +
              "see your system administrator.");
+           _logger.LogError("MEthode Edit -->"+ ex.Message);
         }
         return RedirectToAction("Index");
       }
@@ -146,13 +148,13 @@ namespace Quizz.UI.Areas.Administration.controllers.Societe
       }
       catch (Exception ex )
       {
+        _logger.LogError("Methode DeleteConfirmed -->" + ex.Message);
         //Log the error (uncomment ex variable name and write a log.)
         return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
       }
     }
-
+*/
     #endregion
 
   }
-
 }

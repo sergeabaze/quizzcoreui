@@ -10,10 +10,11 @@ public class HttpRequestBuilder
 {
   private HttpMethod method = null;
   private string requestUri = "";
+  private string baseAdresseUri = "";
   private HttpContent content = null;
   private string bearerToken = "";
   private string acceptHeader = "application/json";
-  private TimeSpan timeout = new TimeSpan(0, 0, 15);
+  private TimeSpan timeout = new TimeSpan(0, 0, 30);
 
   public HttpRequestBuilder()
   {
@@ -26,6 +27,12 @@ public class HttpRequestBuilder
   }
 
   public HttpRequestBuilder AddRequestUri(string requestUri)
+  {
+    this.requestUri = requestUri;
+    return this;
+  }
+
+  public HttpRequestBuilder AddBaseAdressetUri(string requestUri)
   {
     this.requestUri = requestUri;
     return this;
@@ -70,7 +77,7 @@ public class HttpRequestBuilder
     var request = new HttpRequestMessage
     {
       Method = this.method,
-      RequestUri = new Uri(this.requestUri)
+      RequestUri = new Uri(this.baseAdresseUri + this.requestUri)
     };
 
     if (this.content != null)
@@ -87,6 +94,9 @@ public class HttpRequestBuilder
 
     // Mise jour du client  
     var client = new System.Net.Http.HttpClient();
+   // if (!string.IsNullOrEmpty(this.baseAdresseUri))
+   // client.BaseAddress = new Uri(this.baseAdresseUri);
+
     client.Timeout = this.timeout;
 
     addHeaders(client);

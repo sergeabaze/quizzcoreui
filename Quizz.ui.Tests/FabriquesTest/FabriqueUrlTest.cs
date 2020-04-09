@@ -7,7 +7,7 @@ namespace  Quizz.ui.Tests.Fabriques
 {
   public class FabriqueUrlTest
   {
-    Fixture _fixture;
+   // Fixture _fixture;
     private IDictionary<string, object> _parameters;
    // private readonly ITypeClientTraducteur _traducteur;
 

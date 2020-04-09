@@ -6,12 +6,16 @@
 
 
   <ItemGroup>
+    <ProjectReference Include="..\Quizz.Service\Quizz.Service.csproj" />
+    <ProjectReference Include="..\Quizz.DomainModel\Quizz.DomainModel.csproj" />
   </ItemGroup>
 
 
   <ItemGroup>
+    <PackageReference Include="DataTables.AspNetCore.Mvc" Version="1.4.2" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.1" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Serilog.Extensions.Logging.File" Version="2.0.0" />
   </ItemGroup>
 
 </Project>

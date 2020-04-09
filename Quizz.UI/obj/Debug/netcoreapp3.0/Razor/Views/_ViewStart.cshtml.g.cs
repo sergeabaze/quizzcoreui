@@ -26,8 +26,15 @@ using Quizz.UI.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "E:\absquizz\UI\QuizzCoreMvc\Quizz.UI\Views\_ViewImports.cshtml"
+using Quizz.UI.Models.ComptesViewModel;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"1be03b49310e48ab63e6be70b9be2f56d2d13d82", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"22c376ed161ec73be4650ef812f05c46ebef0e54", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

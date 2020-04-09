@@ -15,6 +15,7 @@ namespace Quizz.UI.Communs
       switch (action)
       {
           case 1:{
+            url = _url;
            // url = _url.AddQueryString(_parameters.Select(u => $"{u.Key}={u.Value}"));
             break;
           }

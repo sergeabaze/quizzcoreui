@@ -1,0 +1,90 @@
+@model EmployeCreationViewModel
+
+<form class="form-horizontal" method="post" action="Creation" role="form">
+           
+  <div class="card card-purple">
+    <div class="card-header"></div>
+    <div class="card-body">
+     @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+          <label for="TypeEmploye" class="col-sm-2 col-form-label"> Type Employes</label>
+            <div class="col-sm-8">
+          @Html.DropDownList("TypeEmploye",  Html.GetEnumSelectList<TypeEmployeEnum>(),
+              "Selectionne type employe ",new { @class = "form-control" })
+              <span asp-validation-for="TypeEmploye" class="text-danger"></span>
+            </div>
+             
+        </div>
+
+      <div class="form-group">
+            <label asp-for="Nom" class="col-sm-2 control-label"></label>
+            <div class=" col-sm-8">
+                <input asp-for="Nom" class="form-control" placeholder="..employe" />
+                <span asp-validation-for="Nom" class="text-danger"></span>
+              </div> 
+          </div>
+          <div class="form-group">
+            <label asp-for="Prenom" class="col-sm-2 control-label"></label>
+            <div class=" col-sm-8">
+                <input asp-for="Prenom" class="form-control" placeholder="..porenom" />
+                <span asp-validation-for="Prenom" class="text-danger"></span>
+              </div> 
+          </div>
+          <div class="form-group">
+            <label asp-for="Matricule" class="col-sm-2 control-label"></label>
+            <div class=" col-sm-8">
+                <input asp-for="Matricule" class="form-control" placeholder="..matricule" />
+                <span asp-validation-for="Matricule" class="text-danger"></span>
+              </div> 
+          </div>
+          <div class="form-group">
+            <label asp-for="Email" class="col-sm-2 control-label"></label>
+            <div class=" col-sm-8">
+                <input asp-for="Email" class="form-control" type="email" placeholder="..email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+              </div> 
+          </div>
+          <div class="form-group">
+      <label asp-for="Telephone1" class="col-sm-2 control-label">Telephone1</label>
+       <div class=" col-sm-8">
+          <input asp-for="Telephone1" class="form-control"  placeholder="..telephone1" />
+          <span asp-validation-for="Telephone1" class="text-danger"></span>
+        </div> 
+    </div>
+     <div class="form-group">
+      <label asp-for="Telephone2" class="col-sm-2 control-label">Telephone2</label>
+       <div class=" col-sm-8">
+          <input asp-for="Telephone2" class="form-control"  placeholder="..telephone2" />
+          <span asp-validation-for="Telephone2" class="text-danger"></span>
+        </div> 
+    </div>
+      <div class="row">
+      <div class="col-6">
+       <div class="form-group">
+        <label asp-for="EstCompteActif" class="col-4 control-label">CompteActif ?</label>
+         <div class=" col-4">
+          <input asp-for="EstCompteActif" type="checkbox" class="form-control"  />
+          <span asp-validation-for="EstCompteActif" class="text-danger"></span>
+         </div>
+       </div>
+      </div>
+
+      <div class="col-6 ">
+        <div class="form-group">
+        <label asp-for="EstCompteSupprimer" class="col-5 control-label">Compte est Supprimer ?</label>
+       <div class=" col-4">
+          <input asp-for="EstCompteSupprimer" type="checkbox" class="form-control"  />
+          <span asp-validation-for="EstCompteSupprimer" class="text-danger"></span>
+        </div>
+          
+    </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="card-footer">
+      <button type="submit"  class="btn btn-info"><i class="fas fa-save"></i>Valider</button>
+    </div>
+  </div>
+</form>

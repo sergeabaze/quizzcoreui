@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using Quizz.UI.Models;
 using Quizz.UI.Models.ComptesViewModel;
 using Quizz.UI.Services;
+using Microsoft.Extensions.Options;
 
 namespace Quizz.UI.Controllers
 {
@@ -20,37 +21,35 @@ namespace Quizz.UI.Controllers
   [Route("account")]
   public class AccountController : Controller
   {
-    string SessionKey = "ka";
-   // private readonly UserManager<ApplicationUser> _userManager;
-    //private readonly SignInManager<ApplicationUser> _signInManager;
+    string SessionKey = "userconnect";
+    private readonly IUtilisateurService _service;
     private readonly IEmailSender _emailSender;
     private readonly ILogger _logger;
+    private readonly MySettings _mySettings;
 
     public AccountController(
         IEmailSender emailSender,
-        ILogger<AccountController> logger)
+        ILogger<AccountController> logger,
+        IUtilisateurService service,
+        IOptions<MySettings> settings)
     {
-    //  _userManager = userManager;
-     // _signInManager = signInManager;
+      _service = service;
       _emailSender = emailSender;
       _logger = logger;
+      _mySettings = settings.Value;
     }
 
     [TempData]
     public string ErrorMessage { get; set; }
 
-    // [HttpGet]
-    //[AllowAnonymous]
-    // public async Task<IActionResult> Login(string returnUrl = null)
-   // [Route("")]
+     [HttpGet]
+    [AllowAnonymous]
     [Route("login")]
-    //[Route("~/")]
-    public  IActionResult Login(string returnUrl = null)
+    public  async Task<IActionResult> Login(string returnUrl = null)
     {
-      // Clear the existing external cookie to ensure a clean login process
-     // await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-      //var result=   await Task.FromResult();
-
+     
+      await Task.FromResult(new { idSession =SessionKey });
+      HttpContext.Session.Remove(SessionKey);
       ViewData["ReturnUrl"] = returnUrl;
       return View();
     }
@@ -62,7 +61,9 @@ namespace Quizz.UI.Controllers
     public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
     {
       ViewData["ReturnUrl"] = returnUrl;
-      model.Email ="admin@gmail.com";
+      _logger.LogInformation("Login debut connection"+ model);
+      
+     /* model.Email ="admin@gmail.com";
       model.RememberMe =true;
       SessionUserModel user =new SessionUserModel();
       user.Email = model.Email;
@@ -71,34 +72,81 @@ namespace Quizz.UI.Controllers
       user.ID = "admin";
       SessionKey = "userconnect";
       HttpContext.Session.Set<SessionUserModel>(SessionKey,user);
-      HttpContext.Session.SetString("email",user.Email);
+      HttpContext.Session.SetString("email",user.Email);*/
     
-      return RedirectToLocal(returnUrl);
-     // if (ModelState.IsValid)
-      //{
+     // 
+      if (ModelState.IsValid)
+      {
+        model.EstEmploye =true;
+        try
+        {
+          var reponse = await _service.EmployeLogin(model);
+          if (reponse != null)
+          {
+            _logger.LogInformation("Login debut connection Requette reussite" );
+
+            if(reponse.Model == null){
+              _logger.LogError("Pas de données chargées");
+                throw new Exception("Pas de données chargées");
+
+            }
+            _logger.LogInformation("Login Nodel charger");
+
+            if (reponse.Model.ProfileEmployes == null || reponse.Model.ProfileEmployes.Count <= 0)
+            {
+              throw new Exception("Pas de Profile pour cette utilisateur");
+            }
+              
+            
+            HttpContext.Session.Set<UtilisateurViewModel>(SessionKey, reponse.Model);
+            HttpContext.Session.SetString("email", model.Email);
+            return RedirectToLocal(returnUrl);
+
+          }
+          else
+          {
+            throw new Exception("Incorrect login");
+          }
+        }
+        catch (Exception ex)
+        {
+
+          ModelState.AddModelError(string.Empty, ex.Message);
+          return View(model);
+        }
+        
+            
+
+            
+        
         // This doesn't count login failures towards account lockout
         // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-       // var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
-       /* if (result.Succeeded)
-        {
-          _logger.LogInformation("User logged in.");
-          return RedirectToLocal(returnUrl);
-        }
-        if (result.RequiresTwoFactor)
-        {
-          return RedirectToAction(nameof(LoginWith2fa), new { returnUrl, model.RememberMe });
-        }
-        if (result.IsLockedOut)
-        {
-          _logger.LogWarning("User account locked out.");
-          return RedirectToAction(nameof(Lockout));
+        // var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, lockoutOnFailure: false);
+          /* if (result.Succeeded)
+           {
+             _logger.LogInformation("User logged in.");
+             return RedirectToLocal(returnUrl);
+           }
+           if (result.RequiresTwoFactor)
+           {
+             return RedirectToAction(nameof(LoginWith2fa), new { returnUrl, model.RememberMe });
+           }
+           if (result.IsLockedOut)
+           {
+             _logger.LogWarning("User account locked out.");
+             return RedirectToAction(nameof(Lockout));
+           }
+           else
+           {
+             ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+             return View(model);
+           }*/
         }
         else
         {
           ModelState.AddModelError(string.Empty, "Invalid login attempt.");
           return View(model);
-        }*/
-      //}
+      }
 
       // If we got this far, something failed, redisplay form
      // return View(model);
@@ -109,7 +157,7 @@ namespace Quizz.UI.Controllers
     [ValidateAntiForgeryToken]
     public async Task<IActionResult> Logout()
     {
-      // await _signInManager.SignOutAsync();
+      await Task.FromResult(new { idSession = SessionKey });
       HttpContext.Session.Remove("userconnect");
       _logger.LogInformation("User logged out.");
       return RedirectToAction(nameof(HomeController.Index), "Home");

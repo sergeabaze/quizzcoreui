@@ -18,6 +18,13 @@ namespace Quizz.UI
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+             .ConfigureLogging((hostingContext, builder) =>
+                {
+                  builder.ClearProviders();
+                  builder.AddFilter("Microsoft", LogLevel.Warning);
+                  builder.AddFile("E:/absquizz/Logs/mvc-log-{Date}.txt");
+                  builder.AddConsole();
+                })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
