@@ -39,13 +39,14 @@ namespace Quizz.UI.Areas.Administration.controllers.Societe
     #endregion
 
     #region Actions du controlleur
+    /*
     public async Task<IActionResult> Index(string sortOrder, string searchString)
     {
       ViewData["DesignationSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
 
       _logger.LogInformation("SocieteController-->index");
       _logger.LogInformation("SocieteController-" + _mySettings.ApiBaseUrl);
-         var model =await _service.ObtenireListAsync();
+         var model =await _service.ObtenireListAsync(1);
 
       if (!String.IsNullOrEmpty(searchString))
       {
@@ -152,9 +153,8 @@ namespace Quizz.UI.Areas.Administration.controllers.Societe
         return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
       }
     }
-
+*/
     #endregion
 
   }
-
 }

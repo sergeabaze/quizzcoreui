@@ -11,6 +11,9 @@ namespace Quizz.UI
     public string ApiTypeEmployeUrl { get; set; }
     public string ApiEmployeUrl { get; set; }
     public string ApiSocieteUrl { get; set; }
+    public string ApiMenueUrl { get; set; }
+    public string ApiProfilEmployereUrl { get; set; }
+    public string ApiProfilUrl { get; set; }
       
   }
 }
